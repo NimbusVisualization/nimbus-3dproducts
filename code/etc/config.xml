@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<modules>
+		<Nimbus_3dProducts>
+			<version>0.1</version>
+		</Nimbus_3dProducts>
+	</modules>
+	<global>
+		<models>
+			<nimbus>
+				<class>Nimbus_3dProducts_Model</class>
+			</nimbus>
+		</models>
+		<resources>
+			<nimbus_setup>
+				<setup>
+					<module>Nimbus_3dProducts</module>
+					<class>Mage_Catalog_Model_Resource_Setup</class>
+				</setup>
+			</nimbus_setup>
+		</resources>
+	</global>	
+	<frontend>
+		<routers>
+			<nimbus>
+				<use>standard</use>
+				<args>
+					<module>Nimbus_3dProducts</module>
+					<frontName>nimbus</frontName>
+				</args>
+			</nimbus>
+		</routers>
+		<layout>
+			<updates>
+				<nimbus>
+					<file>nimbus.xml</file>
+				</nimbus>
+			</updates>
+		</layout>
+	</frontend>
+</config>

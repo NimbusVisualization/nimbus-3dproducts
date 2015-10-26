@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<modules>
+		<Nimbus_3dProducts>
+			<active>true</active>
+			<codePool>local</codePool>
+		</Nimbus_3dProducts>
+	</modules>
+</config>

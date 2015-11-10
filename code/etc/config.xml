@@ -19,17 +19,25 @@
 				</setup>
 			</nimbus_setup>
 		</resources>
-	</global>	
+       <blocks>
+            <nimbus_3dproducts>
+                <class>Nimbus_3dProducts_Block</class>
+            </nimbus_3dproducts>
+        </blocks>
+    </global>
+    <adminhtml>
+        <events>
+            <adminhtml_catalog_product_edit_prepare_form><!-- event needed to add a template to a certain attribute -->
+                <observers>
+                    <nimbus>
+                        <class>Nimbus_3dProducts_Model_Observer</class>
+                        <method>convertCustomValues</method>
+                    </nimbus>
+                </observers>
+            </adminhtml_catalog_product_edit_prepare_form>
+        </events>
+    </adminhtml>
 	<frontend>
-		<routers>
-			<nimbus>
-				<use>standard</use>
-				<args>
-					<module>Nimbus_3dProducts</module>
-					<frontName>nimbus</frontName>
-				</args>
-			</nimbus>
-		</routers>
 		<layout>
 			<updates>
 				<nimbus>

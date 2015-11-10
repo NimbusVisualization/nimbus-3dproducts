@@ -3,6 +3,7 @@
 class Nimbus_3dProducts_Model_Api_Client
 {
 	protected $api_url = 'http://localhost/nimbus-api/public/api/v1/';
+	protected $viewer_url = 'http://localhost/nimbus-api/public/viewer/';
 	protected $cache = array();
 	
 	/**
@@ -11,7 +12,25 @@ class Nimbus_3dProducts_Model_Api_Client
 	 */
 	public function getModelInfo($product)
 	{
-		return $this->request('object3ds/' . $product->getNimbusObjectId());
+		$data = $product->getNimbusObject();
+
+		if (!empty($data['product']))
+			return $this->request('products/' . $data['product']);
+		else
+			return false;
+	}
+
+	/**
+	 * @param Mage_Catalog_Model_Product $product
+	 * @return string|false
+	 */
+	public function getViewerUrl($product)
+	{
+		$data = $product->getNimbusObject();
+		if (!empty($data['product']))
+			return $this->viewer_url . $data['product'];
+		else
+			return false;
 	}
 	
 	/**
@@ -39,7 +58,7 @@ class Nimbus_3dProducts_Model_Api_Client
 			if (curl_errno($curl))
 				Mage::throwException(Mage::helper('nimbus')->__("CURL Error: %s", curl_error($curl)));
 
-			$this->cache[$api_segments] = $result = json_decode($response) ?: false;
+			$this->cache[$api_segments] = $result = $response ?: false;
 			
 		} catch (Exception $e) {
 			Mage::logException($e);

@@ -4,11 +4,12 @@ $installer = $this;
 $installer->startSetup();
 
 $group = 'Nimbus 3D Products';
-$installer->removeAttribute('catalog_product', 'nimbus_test');
-$installer->addAttribute('catalog_product', 'nimbus_object_id', array(
+
+$installer->addAttribute('catalog_product', 'nimbus_object', array(
         'type'      => 'text',
         'input'     => 'text',
-        'label'     => 'Nimbus Object ID',
+        'label'     => 'Nimbus Object',
+        'backend'   => 'nimbus/handler',
         'global'    => Mage_Catalog_Model_Resource_Eav_Attribute::SCOPE_GLOBAL,
         'visible'   => 1,
         'required'  => 0,

@@ -4,6 +4,10 @@
 		<Nimbus_3dProducts>
 			<active>true</active>
 			<codePool>local</codePool>
+			<depends>
+				<Mage_Catalog />
+				<Mage_Adminhtml />
+			</depends>
 		</Nimbus_3dProducts>
 	</modules>
 </config>

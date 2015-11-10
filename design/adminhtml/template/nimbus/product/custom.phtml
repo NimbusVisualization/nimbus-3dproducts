@@ -1,0 +1,40 @@
+<?php
+$_htmlName = $this->getElement()->getName();
+$value = $this->getElement()->getValue();
+
+$saved_mfr = (!empty($value['manufacturer'])) ? $value['manufacturer'] : '0';
+$saved_prod = (!empty($value['product'])) ? $value['product'] : '0';
+
+?>
+
+<script type="text/javascript">
+    var saved_mfr = <?php echo $saved_mfr; ?>;
+    var saved_prod = <?php echo $saved_prod; ?>;
+</script>
+
+<tr>
+    <td style="height: 350px">
+        <table>
+            <tr>
+                <td class="label"><label for="mfr-input">Manufacturer</label></td>
+                <td class="value">
+                    <select id="mfr-input" name="<?php echo $_htmlName;?>[manufacturer]" class="select">
+                        <option></option>
+                    </select>
+                </td>
+                <!-- <td class="scope-label"><span class="nobr">[GLOBAL]</span></td> -->
+            </tr>
+            <tr>
+                <td class="label"><label for="prod-input">Product</label></td>
+                <td class="value">
+                    <select id="prod-input" name="<?php echo $_htmlName;?>[product]" class="select" disabled>
+                        <option>Select a Manufacturer</option>
+                    </select>
+                </td>
+                <!-- <td class="scope-label"><span class="nobr">[GLOBAL]</span></td> -->
+            </tr>
+        </table>
+    </td>
+</tr>
+
+

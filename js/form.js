@@ -1,7 +1,7 @@
 var api_url;
 
 jQuery(function(){
-	api_url = 'http://localhost/nimbus-api/public/api/v1';
+	api_url = 'http://api.nimbusvisualization.com/api/v1';
 	jQuery.get(api_url + '/manufacturers', function(data){ load_mfrs(data); });
 });
 

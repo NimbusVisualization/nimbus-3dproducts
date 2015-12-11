@@ -207,5 +207,5 @@
 }
 
 @media (max-width: 991px) {
-  #nimbus-modal-target.modal { padding: 15px; }
+  #nimbus-modal-target.modal { padding: 15px !important; }
 }

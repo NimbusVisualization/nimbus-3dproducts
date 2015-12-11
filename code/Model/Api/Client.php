@@ -2,8 +2,8 @@
 
 class Nimbus_3dProducts_Model_Api_Client
 {
-	protected $api_url = 'http://localhost/nimbus-api/public/api/v1/';
-	protected $viewer_url = 'http://localhost/nimbus-api/public/viewer/';
+	protected $api_url = 'http://api.nimbusvisualization.com/api/v1/';
+	protected $viewer_url = 'http://api.nimbusvisualization.com/public/viewer/';
 	protected $cache = array();
 	
 	/**

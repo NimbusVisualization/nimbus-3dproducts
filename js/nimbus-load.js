@@ -12,11 +12,11 @@
    * 
    */
   var config = {
-    jquery:           'http://localhost/foodinsurance_1.9/js/nimbus/jquery.min.js',
-    jqueryNoConflict: 'http://localhost/foodinsurance_1.9/js/nimbus/jquery_noconflict.js',
+    jquery:           '/s/nimbus/jquery.min.js',
+    jqueryNoConflict: '/js/nimbus/jquery_noconflict.js',
     modal: {
-      js:      'http://localhost/foodinsurance_1.9/js/nimbus/bootstrap-modal.js',
-      css:     'http://localhost/foodinsurance_1.9/js/nimbus/bootstrap-modal.css'
+      js:      '/js/nimbus/bootstrap-modal.js',
+      css:     '/js/nimbus/bootstrap-modal.css'
     }
   };
 

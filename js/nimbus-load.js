@@ -12,7 +12,7 @@
    * 
    */
   var config = {
-    jquery:           '/s/nimbus/jquery.min.js',
+    jquery:           '/js/nimbus/jquery.min.js',
     jqueryNoConflict: '/js/nimbus/jquery_noconflict.js',
     modal: {
       js:      '/js/nimbus/bootstrap-modal.js',

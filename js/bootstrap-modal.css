@@ -175,14 +175,10 @@
     padding-top: 30px;
     padding-bottom: 30px;
   }
-}
-
-@media (max-width: 767px) {
   #nimbus-modal-target.modal {
     margin: 0 auto;
   }
 }
-
 
 #nimbus-modal-target .modal-dialog {
   width: 100%;
@@ -194,16 +190,14 @@
     height: 650px;
     max-height: 70vh;
   }
-}
-
-#nimbus-modal-target .modal-content iframe {
-  height: 100%;
-  width: 100%;
+  #nimbus-modal-target .modal-content iframe {
+    height: 100%;
+  }
 }
 
 @media (max-width: 767px) {
   #nimbus-modal-target .modal-content iframe {
-    height: 70vh;
+    width: 100%;
   }
 }
 

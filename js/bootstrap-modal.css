@@ -2,6 +2,9 @@
  * Boostrap modal v3.3.5
  *
  * namespaced
+ *
+ * This CSS file is inside the /js folder because Magento doesn't have a
+ * default /css folder.
  */
 
 #nimbus-modal-target .close {
@@ -156,6 +159,53 @@
 
 /*
  * Custom modal styles
- * 
+ *
  */
 #nimbus-modal-target .modal-header { border: 0; }
+
+@media (min-width: 768px) {
+  #nimbus-modal-target.modal-content {
+    min-height: 650px;
+  }
+}
+
+@media (min-width: 768px) {
+  #nimbus-modal-target.modal {
+    margin: 30px auto;
+  }
+}
+
+@media (max-width: 767px) {
+  #nimbus-modal-target.modal {
+    margin: 0 auto;
+  }
+}
+
+
+#nimbus-modal-target .modal-dialog {
+  width: 100%;
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  #nimbus-modal-target .modal-body {
+    height: 650px;
+    max-height: 70vh;
+  }
+}
+
+@media (max-width: 767px) {
+  #nimbus-modal-target .modal-body {
+    height: 90vh;
+    max-height: 100%;
+  }
+}
+
+#nimbus-modal-target .modal-content iframe {
+  height: 100%;
+  width: 100%;
+}
+
+@media (max-width: 991px) {
+  #nimbus-modal-target.modal { padding: 15px; }
+}

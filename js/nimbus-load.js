@@ -2,14 +2,14 @@
  * Nimbus
  *
  * Conditional loading of jQuery and Bootstrap scripts
- * 
+ *
  */
 
 (function() {
 
   /**************************
    * Config
-   * 
+   *
    */
   var config = {
     jquery:           '/js/nimbus/jquery.min.js',
@@ -65,7 +65,7 @@
      *
      */
     var modalHtml = [];
-    modalHtml.push('<div class="modal fade" id="nimbus-modal-target">');
+    modalHtml.push('<div class="modal modal-lg fade" id="nimbus-modal-target">');
       modalHtml.push('<div class="modal-dialog">');
         modalHtml.push('<div class="modal-content">');
           modalHtml.push('<div class="modal-header">');
@@ -77,30 +77,30 @@
         modalHtml.push('</div>');
       modalHtml.push('</div>');
     modalHtml.push('</div>');
-    
+
     modalHtml = modalHtml.join('');
 
     jQuery(document).ready(function($) {
       /*
        * Append modal HTML inside body tag on ducument.ready
-       * 
+       *
        */
       $('body').append(modalHtml);
 
-      
+
       /*
        * Apply Bootstrap/Prototype patch
-       * 
+       *
        */
       bootstrapModalPatch();
 
 
       /*
        * Modal open and close
-       * 
+       *
        */
 
-      /* 
+      /*
        * Modal open
        * Grab trigger href and use it as iframe src
        */
@@ -112,7 +112,7 @@
         $('#nimbus-modal-target').find('iframe').attr('src', $iframe);
       });
 
-      /* 
+      /*
        * Modal close
        * Reset the iframe on close
        */
@@ -135,7 +135,7 @@
 
     /* Add Bootstrap modal styles */
     var modalStyles = document.createElement('link');
-    
+
     modalStyles.rel  = 'stylesheet';
     modalStyles.type = 'text/css';
     modalStyles.href = config.modal.css;
@@ -147,7 +147,7 @@
 
   /**************************
    * Helpers functions
-   * 
+   *
    */
 
   /*

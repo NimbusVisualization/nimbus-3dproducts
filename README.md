@@ -6,7 +6,7 @@ More information: http://www.nimbusvisualization.com
 
 You can install this module in various ways:
 
-1) Download the Magento source archive from our GitHub repository (https://github.com/nimbus/nimbus-3dproducts), extract the files and upload to your Magento root folder. Make sure to flush the Magento cache. Make sure to logout once you're done.
+1) Download the Magento source archive from our GitHub repository (https://github.com/NimbusVisualization/nimbus-3dproducts), extract the files and upload to your Magento root folder. Make sure to flush the Magento cache. Make sure to logout once you're done.
 
 2) Use `modman` to install the git repository for you:
 

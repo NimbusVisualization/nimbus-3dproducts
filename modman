@@ -1,11 +1,12 @@
 # Nimbus 3dProducts v0.1
-code			app/code/local/Nimbus/3dProducts
+app/code/local/Nimbus/3dProducts
 
-design/layout/*								app/design/frontend/base/default/layout/
-design/template/							app/design/frontend/base/default/template/nimbus/
-design/adminhtml/template/nimbus/			app/design/adminhtml/base/default/template/nimbus/
+app/design/frontend/base/default/layout/nimbus.xml
+app/design/frontend/base/default/template/nimbus/
+app/design/adminhtml/base/default/template/nimbus/
 
-js				js/nimbus
-skin/adminhtml				skin/adminhtml/base/default/nimbus
+js/nimbus
+skin/adminhtml/base/default/nimbus
+skin/frontend/base/default/nimbus
 
-Nimbus_3dProducts.xml	app/etc/modules/Nimbus_3dProducts.xml
+app/etc/modules/Nimbus_3dProducts.xml

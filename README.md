@@ -14,3 +14,12 @@ You can install this module in various ways:
     modman clone https://github.com/nimbus/nimbus-3dproducts
     modman update nimbus-3dproducts
 
+## Custom Magento Theme
+
+To customize the templates for your Magento Theme, create a new template file for your theme:
+
+	/app/design/frontend/YOURTHEME/default/template/nimbus/catalog/product/view/3dmodel.phtml
+
+You may also edit the layout by overriding the XML found in:
+
+	app/design/frontend/base/default/layout/nimbus.xml

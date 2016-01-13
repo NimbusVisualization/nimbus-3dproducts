@@ -22,4 +22,4 @@ To customize the templates for your Magento Theme, create a new template file fo
 
 You may also edit the layout by overriding the XML found in:
 
-	app/design/frontend/base/default/layout/nimbus.xml
+	/app/design/frontend/base/default/layout/nimbus.xml

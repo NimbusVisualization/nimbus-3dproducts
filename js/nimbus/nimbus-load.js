@@ -11,12 +11,19 @@
    * Config
    *
    */
+
+  var base_url = '';
+
+  if (nimbus_base_url) {
+    base_url = nimbus_base_url;
+  }
+
   var config = {
-    jquery:           '/js/nimbus/jquery.min.js',
-    jqueryNoConflict: '/js/nimbus/jquery_noconflict.js',
+    jquery:           base_url + '/js/nimbus/jquery.min.js',
+    jqueryNoConflict: base_url + '/js/nimbus/jquery_noconflict.js',
     modal: {
-      js:      '/js/nimbus/bootstrap-modal.js',
-      css:     '/js/nimbus/bootstrap-modal.css'
+      js:      base_url + '/js/nimbus/bootstrap-modal.js',
+      css:     base_url + '/js/nimbus/bootstrap-modal.css'
     }
   };
 

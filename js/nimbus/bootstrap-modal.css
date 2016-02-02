@@ -198,6 +198,7 @@
 @media (max-width: 767px) {
   #nimbus-modal-target .modal-content iframe {
     width: 100%;
+    height: 90vh;
   }
 }
 

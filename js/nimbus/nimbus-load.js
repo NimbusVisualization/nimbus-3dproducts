@@ -79,7 +79,7 @@
             modalHtml.push('<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>');
           modalHtml.push('</div>');
           modalHtml.push('<div class="modal-body">');
-            modalHtml.push('<iframe src="" frameborder="0" width="100%"></iframe>');
+            modalHtml.push('<iframe src="" scrolling="no" frameborder="0" width="100%" height="100%"></iframe>');
           modalHtml.push('</div>');
         modalHtml.push('</div>');
       modalHtml.push('</div>');

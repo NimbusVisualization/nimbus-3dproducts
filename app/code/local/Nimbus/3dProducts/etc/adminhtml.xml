@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<config>
+	<acl>
+		<resources>
+			<admin>
+				<children>
+					<system>
+						<children>
+							<config>
+								<children>
+									<nimbus_3dproducts translate="title" module="nimbus_3dproducts">
+										<title>Nimbus 3D Products Configuration</title>
+									</nimbus_3dproducts>
+								</children>
+							</config>
+						</children>
+					</system>
+				</children>
+			</admin>
+	    </resources>
+	</acl>
+</config>

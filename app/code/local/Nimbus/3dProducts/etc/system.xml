@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<config>
+	<sections>
+        <nimbus_3dproducts translate="label" module="nimbus_3dproducts">
+            <label>Nimbus 3D Products</label>
+            <tab>catalog</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>500</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>0</show_in_website>
+            <show_in_store>0</show_in_store>
+            <groups>
+                <config translate="label">
+                    <label>Configuration</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>100</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>0</show_in_website>
+                    <show_in_store>0</show_in_store>
+                    <fields>
+						<access_token translate="label">
+							<label>Access Token</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+						</access_token>
+                        <api_base_url translate="label">
+                            <label>API Base URL (development only)</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </api_base_url>
+					</fields>
+				</config>
+			</groups>
+		</nimbus_3dproducts>
+	</sections>
+
+</config>

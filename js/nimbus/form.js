@@ -1,8 +1,5 @@
-var api_url;
-
 jQuery(function(){
-	api_url = 'http://api.nimbusvisualization.com/api/v1';
-	jQuery.get(api_url + '/manufacturers', function(data){ load_mfrs(data); });
+	jQuery.get(api_url + 'manufacturers', function(data){ load_mfrs(data); });
 });
 
 function load_mfrs(data)
@@ -22,12 +19,12 @@ function load_mfrs(data)
 
 	mfr_select.selectize({
 		onChange: function(value) {
-			jQuery.get(api_url + '/manufacturers/' + value + '/products', function(data){ load_prods(data); });
+			jQuery.get(api_url + 'manufacturers/' + value + '/products', function(data){ load_prods(data); });
 		}
 	});
 
 	if (loaded_saved_mfr)
-		jQuery.get(api_url + '/manufacturers/' + saved_mfr + '/products', function(data){ load_prods(data); });
+		jQuery.get(api_url + 'manufacturers/' + saved_mfr + '/products', function(data){ load_prods(data); });
 }
 
 function load_prods(data)

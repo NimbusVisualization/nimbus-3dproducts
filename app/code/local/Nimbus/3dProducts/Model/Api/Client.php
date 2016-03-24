@@ -2,10 +2,14 @@
 
 class Nimbus_3dProducts_Model_Api_Client
 {
-	protected $api_url = 'http://api.nimbusvisualization.com/api/v1/';
-	protected $viewer_url = 'http://api.nimbusvisualization.com/viewer/';
+    protected $helper;
 	protected $cache = array();
-	
+
+    public function __construct()
+    {
+        $this->helper = Mage::helper('nimbus_3dproducts');
+    }
+
 	/**
 	 * @param Mage_Catalog_Model_Product $product
 	 * @return object|false
@@ -21,14 +25,36 @@ class Nimbus_3dProducts_Model_Api_Client
 	}
 
 	/**
+	 * @return string|false
+	 */
+	public function getApiUrl()
+	{
+		if (empty($this->helper->access_token))
+			return false;
+		else
+			return $this->helper->api_base_url . '/api/v1/' . $this->helper->access_token . '/';
+	}
+
+	/**
+	 * @return string|false
+	 */
+	public function getAccessToken()
+	{
+		if (empty($this->helper->access_token))
+			return false;
+		else
+			return $this->helper->access_token;
+	}
+
+	/**
 	 * @param Mage_Catalog_Model_Product $product
 	 * @return string|false
 	 */
 	public function getViewerUrl($product)
 	{
 		$data = $product->getNimbusObject();
-		if (!empty($data['product']))
-			return $this->viewer_url . $data['product'];
+		if (!empty($data['product']) && !empty($this->helper->access_token))
+			return $this->helper->api_base_url . 'viewer/' . $this->helper->access_token . '/' . $data['product'];
 		else
 			return false;
 	}
@@ -48,7 +74,7 @@ class Nimbus_3dProducts_Model_Api_Client
 		try {
 			$curl = curl_init();
 			curl_setopt_array($curl, array(
-					CURLOPT_URL => $this->api_url . $api_segments,
+					CURLOPT_URL => $this->getApiUrl() . $api_segments,
 					CURLOPT_RETURNTRANSFER => true,
 					CURLOPT_CONNECTTIMEOUT => 10,
 					CURLOPT_TIMEOUT=>10

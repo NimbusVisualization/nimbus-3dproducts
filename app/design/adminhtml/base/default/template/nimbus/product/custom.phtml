@@ -5,9 +5,13 @@ $value = $this->getElement()->getValue();
 $saved_mfr = (!empty($value['manufacturer'])) ? $value['manufacturer'] : '0';
 $saved_prod = (!empty($value['product'])) ? $value['product'] : '0';
 
+$api_client = Mage::getSingleton('nimbus/api_client');
+
+if ($api_client->getAccessToken()) {
 ?>
 
 <script type="text/javascript">
+    var api_url = '<?php echo $api_client->getApiUrl(); ?>';
     var saved_mfr = <?php echo $saved_mfr; ?>;
     var saved_prod = <?php echo $saved_prod; ?>;
 </script>
@@ -33,8 +37,18 @@ $saved_prod = (!empty($value['product'])) ? $value['product'] : '0';
                 </td>
                 <!-- <td class="scope-label"><span class="nobr">[GLOBAL]</span></td> -->
             </tr>
+            <tr><td colspan="2" style="padding: 15px 5px"><a href="<?php echo $this->getUrl('adminhtml/system_config/edit/section/nimbus_3dproducts'); ?>">Update your access token</a></td></tr>
+        </table>
+    </td>
+</tr>
+<?php } else { ?>
+
+<tr>
+    <td style="height: 350px">
+        <table>
+            <tr><td colspan="2">You must setup your account and <a href="<?php echo $this->getUrl('adminhtml/system_config/edit/section/nimbus_3dproducts'); ?>">add your access token</a> before you can assign models to products.</td></tr>
         </table>
     </td>
 </tr>
 
-
+<?php } ?>

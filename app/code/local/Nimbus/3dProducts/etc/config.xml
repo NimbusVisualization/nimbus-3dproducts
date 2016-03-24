@@ -6,6 +6,11 @@
 		</Nimbus_3dProducts>
 	</modules>
 	<global>
+		<helpers>
+			<nimbus_3dproducts>
+				<class>Nimbus_3dProducts_Helper</class>
+			</nimbus_3dproducts>
+		</helpers>
 		<models>
 			<nimbus>
 				<class>Nimbus_3dProducts_Model</class>

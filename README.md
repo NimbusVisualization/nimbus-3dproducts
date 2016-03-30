@@ -11,7 +11,7 @@ You can install this module in various ways:
 2) Use `modman` to install the git repository for you:
 
     modman init
-    modman clone https://github.com/nimbus/nimbus-3dproducts
+    modman clone https://github.com/NimbusVisualization/nimbus-3dproducts
     modman update nimbus-3dproducts
 
 ## Custom Magento Theme

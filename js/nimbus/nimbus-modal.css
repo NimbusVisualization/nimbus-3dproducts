@@ -25,9 +25,9 @@
   filter: alpha(opacity=50);
   opacity: .5;
 }
-#nimbus-modal-target button.close {
+#nimbus-modal-target a.close {
   -webkit-appearance: none;
-  padding: 0;
+  padding: 10px 10px 0 0;
   cursor: pointer;
   background: transparent;
   border: 0;
@@ -35,7 +35,7 @@
 .modal-open {
   overflow: hidden;
 }
-#nimbus-modal-target.modal {
+#nimbus-modal-target.nimbus-modal {
   position: fixed;
   top: 0;
   right: 0;
@@ -49,15 +49,16 @@
   width: 100%;
 }
 
-#nimbus-modal-target.modal-open .modal {
+#nimbus-modal-target.modal-open.nimbus-modal {
   overflow-x: hidden;
   overflow-y: auto;
+  display: block;
 }
 #nimbus-modal-target .modal-dialog {
   position: relative;
   margin: 0;
 }
-#nimbus-modal-target .modal-content {
+#nimbus-modal-target .nimbus-modal-content {
   position: relative;
   background-color: #fff;
   background-clip: padding-box;
@@ -128,7 +129,7 @@
     width: 600px;
     margin: 30px auto;
   }
-  #nimbus-modal-target .modal-content {
+  #nimbus-modal-target .nimbus-modal-content {
     box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
   }
   #nimbus-modal-target.modal-sm {
@@ -157,11 +158,11 @@
 }
 
 @media (max-width: 767px) {
-  #nimbus-modal-target.modal {
+  #nimbus-modal-target.nimbus-modal {
     padding: 0 !important;
   }
 
-  #nimbus-modal-target .modal-dialog {
+  #nimbus-modal-target.modal-dialog {
     padding: 15px;
   }
 

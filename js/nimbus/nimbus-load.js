@@ -104,6 +104,10 @@
      */
     jQuery('body').append(modalHtml);
 
+    jQuery('.nimbus-modal-trigger').click(function(e) {
+      e.preventDefault();
+    });
+
     // Initialize modal
     // Instantiate Vanilla Modal
     const nimbus_modal = new vanillaModal.VanillaModal({

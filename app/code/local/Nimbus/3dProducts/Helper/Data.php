@@ -13,7 +13,7 @@ class Nimbus_3dproducts_Helper_Data extends Mage_Core_Helper_Data {
 
         // set default API URL when empty
         if (empty($config['api_base_url']))
-        	$this->api_base_url = 'http://api.nimbusvisualization.com';
+        	$this->api_base_url = 'https://api.nimbusvisualization.com';
         else
         	$this->api_base_url = $config['api_base_url'];
 

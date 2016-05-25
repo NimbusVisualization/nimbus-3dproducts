@@ -13,7 +13,6 @@
    */
 
   var base_url = '';
-  var nimbus_uuid = null;
 
   if (nimbus_base_url) {
     base_url = nimbus_base_url;
@@ -22,8 +21,6 @@
   var config = {
     jquery:           base_url + '/js/nimbus/jquery.min.js',
     jqueryNoConflict: base_url + '/js/nimbus/jquery_noconflict.js',
-    uuid_gen:         base_url + '/js/nimbus/uuid.js',
-    js_cookie:        base_url + '/js/nimbus/js_cookie.js',
     modal: {
       js:      base_url + '/js/nimbus/vanilla-modal.min.js',
       css:     base_url + '/js/nimbus/nimbus-modal.css'
@@ -43,21 +40,6 @@
     async(config.jquery);
     async(config.jqueryNoConflict); // Enable noConflict
   }
-
-  async(config.uuid_gen, function(){
-    async(config.js_cookie, function(){
-      var NimbusCookies = Cookies.noConflict();
-      retrieved_cookie = NimbusCookies.get('nimbus_user');
-
-      if (retrieved_cookie == null)
-      {
-        retrieved_cookie = uuid.v4();
-        NimbusCookies.set('nimbus_user', retrieved_cookie); // TODO: add 'path' and 'expires' options to cookie
-      }
-
-      nimbus_uuid = retrieved_cookie;
-    });
-  });
 
   /* Make sure jQuery is loaded before loading rest of script */
   function checkJquery() {

@@ -110,7 +110,7 @@
 
     // Initialize modal
     // Instantiate Vanilla Modal
-    const nimbus_modal = new vanillaModal.VanillaModal({
+    var nimbus_modal = new vanillaModal.VanillaModal({
       modal: '.nimbus-modal',
       modalInner: '.nimbus-modal-inner',
       modalContent: '.nimbus-modal-content',

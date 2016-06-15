@@ -7,7 +7,7 @@ class Nimbus_3dProducts_Model_Api_Client
 
     public function __construct()
     {
-        $this->helper = Mage::helper('nimbus_3dproducts');
+        $this->helper = Mage::helper('nimbus3d');
     }
 
 	/**
@@ -27,23 +27,20 @@ class Nimbus_3dProducts_Model_Api_Client
 	/**
 	 * @return string|false
 	 */
-	public function getApiUrl()
+	public function getClientId()
 	{
-		if (empty($this->helper->access_token))
-			return false;
-		else
-			return $this->helper->api_base_url . '/api/v1/' . $this->helper->access_token . '/';
+		return $this->helper->client_id ?: false;
 	}
-
+	
 	/**
 	 * @return string|false
 	 */
-	public function getAccessToken()
+	public function getApiUrl()
 	{
-		if (empty($this->helper->access_token))
+		if (empty($this->helper->client_id))
 			return false;
 		else
-			return $this->helper->access_token;
+			return $this->helper->api_base_url . 'api/v1/';
 	}
 
 	/**
@@ -53,8 +50,8 @@ class Nimbus_3dProducts_Model_Api_Client
 	public function getViewerUrl($product)
 	{
 		$data = $product->getNimbusObject();
-		if (!empty($data['product']) && !empty($this->helper->access_token))
-			return $this->helper->api_base_url . 'viewer/' . $this->helper->access_token . '/' . $data['product'];
+		if (!empty($data['product']) && !empty($this->helper->client_id))
+			return $this->helper->api_base_url . 'viewer/' . $data['product'] . '?client_id=' . $this->helper->client_id;
 		else
 			return false;
 	}
@@ -82,7 +79,7 @@ class Nimbus_3dProducts_Model_Api_Client
 			$response = curl_exec($curl);
 
 			if (curl_errno($curl))
-				Mage::throwException(Mage::helper('nimbus')->__("CURL Error: %s", curl_error($curl)));
+				Mage::throwException(Mage::helper('nimbus3d')->__("CURL Error: %s", curl_error($curl)));
 
 			$this->cache[$api_segments] = $result = $response ?: false;
 			

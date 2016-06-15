@@ -5,13 +5,14 @@ $value = $this->getElement()->getValue();
 $saved_mfr = (!empty($value['manufacturer'])) ? $value['manufacturer'] : '0';
 $saved_prod = (!empty($value['product'])) ? $value['product'] : '0';
 
-$api_client = Mage::getSingleton('nimbus/api_client');
+$api_client = Mage::getSingleton('nimbus3d/api_client');
 
-if ($api_client->getAccessToken()) {
+if ($api_client->getClientId()) {
 ?>
 
 <script type="text/javascript">
     var api_url = '<?php echo $api_client->getApiUrl(); ?>';
+	var api_client_id = '<?php echo $api_client->getClientId(); ?>';
     var saved_mfr = <?php echo $saved_mfr; ?>;
     var saved_prod = <?php echo $saved_prod; ?>;
 </script>
@@ -37,7 +38,7 @@ if ($api_client->getAccessToken()) {
                 </td>
                 <!-- <td class="scope-label"><span class="nobr">[GLOBAL]</span></td> -->
             </tr>
-            <tr><td colspan="2" style="padding: 15px 5px"><a href="<?php echo $this->getUrl('adminhtml/system_config/edit/section/nimbus_3dproducts'); ?>">Update your access token</a></td></tr>
+            <tr><td colspan="2" style="padding: 15px 5px"><a href="<?php echo $this->getUrl('adminhtml/system_config/edit/section/nimbus_3dproducts'); ?>">Update your OAuth credentials</a></td></tr>
         </table>
     </td>
 </tr>
@@ -46,7 +47,7 @@ if ($api_client->getAccessToken()) {
 <tr>
     <td style="height: 350px">
         <table>
-            <tr><td colspan="2">You must setup your account and <a href="<?php echo $this->getUrl('adminhtml/system_config/edit/section/nimbus_3dproducts'); ?>">add your access token</a> before you can assign models to products.</td></tr>
+            <tr><td colspan="2">You must setup your account and <a href="<?php echo $this->getUrl('adminhtml/system_config/edit/section/nimbus_3dproducts'); ?>">add your OAuth credentials</a> before you can assign models to products.</td></tr>
         </table>
     </td>
 </tr>

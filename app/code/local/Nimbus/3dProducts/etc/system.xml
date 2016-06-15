@@ -2,7 +2,7 @@
 
 <config>
 	<sections>
-        <nimbus_3dproducts translate="label" module="nimbus_3dproducts">
+        <nimbus_3dproducts translate="label" module="nimbus3d">
             <label>Nimbus 3D Products</label>
             <tab>catalog</tab>
             <frontend_type>text</frontend_type>
@@ -19,14 +19,22 @@
                     <show_in_website>0</show_in_website>
                     <show_in_store>0</show_in_store>
                     <fields>
-						<access_token translate="label">
-							<label>Access Token</label>
+						<client_id translate="label">
+							<label>Client ID</label>
                             <frontend_type>text</frontend_type>
                             <sort_order>10</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>0</show_in_website>
                             <show_in_store>0</show_in_store>
-						</access_token>
+						</client_id>
+						<client_secret>
+							<label>Client Secret</label>
+                            <frontend_type>password</frontend_type>
+                            <sort_order>11</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+						</client_secret>
                         <api_base_url translate="label">
                             <label>API Base URL (development only)</label>
                             <frontend_type>text</frontend_type>

@@ -1,5 +1,5 @@
 jQuery(function(){
-	jQuery.get(api_url + 'manufacturers', function(data){ load_mfrs(data); });
+	jQuery.get(api_url + 'manufacturers', { client_id: api_client_id }, load_mfrs);
 });
 
 function load_mfrs(data)
@@ -19,12 +19,12 @@ function load_mfrs(data)
 
 	mfr_select.selectize({
 		onChange: function(value) {
-			jQuery.get(api_url + 'manufacturers/' + value + '/products', function(data){ load_prods(data); });
+			jQuery.get(api_url + 'manufacturers/' + value + '/products', { client_id: api_client_id}, load_prods);
 		}
 	});
 
 	if (loaded_saved_mfr)
-		jQuery.get(api_url + 'manufacturers/' + saved_mfr + '/products', function(data){ load_prods(data); });
+		jQuery.get(api_url + 'manufacturers/' + saved_mfr + '/products', { client_id: api_client_id}, load_prods);
 }
 
 function load_prods(data)

@@ -2,19 +2,19 @@
 <config>
 	<modules>
 		<Nimbus_3dProducts>
-			<version>0.1</version>
+			<version>0.2</version>
 		</Nimbus_3dProducts>
 	</modules>
 	<global>
 		<helpers>
-			<nimbus_3dproducts>
+			<nimbus3d>
 				<class>Nimbus_3dProducts_Helper</class>
-			</nimbus_3dproducts>
+			</nimbus3d>
 		</helpers>
 		<models>
-			<nimbus>
+			<nimbus3d>
 				<class>Nimbus_3dProducts_Model</class>
-			</nimbus>
+			</nimbus3d>
 		</models>
 		<resources>
 			<nimbus_setup>
@@ -25,9 +25,9 @@
 			</nimbus_setup>
 		</resources>
        <blocks>
-            <nimbus_3dproducts>
+            <nimbus3d>
                 <class>Nimbus_3dProducts_Block</class>
-            </nimbus_3dproducts>
+            </nimbus3d>
         </blocks>
     </global>
     <adminhtml>
@@ -35,11 +35,21 @@
             <adminhtml_catalog_product_edit_prepare_form><!-- event needed to add a template to a certain attribute -->
                 <observers>
                     <nimbus>
-                        <class>Nimbus_3dProducts_Model_Observer</class>
+                        <type>singleton</type>
+	                    <class>nimbus3d/observer</class>
                         <method>convertCustomValues</method>
                     </nimbus>
                 </observers>
             </adminhtml_catalog_product_edit_prepare_form>
+			<sales_order_place_after>
+				<observers>
+	                <nimbus>
+	                	<type>singleton</type>
+	                    <class>nimbus3d/observer</class>
+	                    <method>placeOrder</method>
+	                </nimbus>
+				</observers>
+			</sales_order_place_after>
         </events>
     </adminhtml>
 	<frontend>

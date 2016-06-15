@@ -3,7 +3,7 @@ app/code/local/Nimbus/3dProducts
 
 app/design/frontend/base/default/layout/nimbus.xml
 app/design/frontend/base/default/template/nimbus/
-app/design/adminhtml/base/default/template/nimbus/
+app/design/adminhtml/default/default/template/nimbus/
 
 js/nimbus
 skin/adminhtml/base/default/nimbus

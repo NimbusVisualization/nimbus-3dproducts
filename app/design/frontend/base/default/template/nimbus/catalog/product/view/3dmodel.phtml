@@ -1,4 +1,4 @@
-<?php $viewer_url = Mage::getSingleton('nimbus/api_client')->getViewerUrl($this->getProduct()); ?>
+<?php $viewer_url = Mage::getSingleton('nimbus3d/api_client')->getViewerUrl($this->getProduct()); ?>
 <?php if ($viewer_url) : ?>
 	<a href="#nimbus-modal-1" data-url="<?php echo $viewer_url ?>" rel="modal:open" class="nimbus-modal-trigger"><img src="<?php echo $this->getSkinUrl('nimbus/3d-spin.png');?>" alt="View Nimbus 3D Model" /></a>
 <?php endif; ?>

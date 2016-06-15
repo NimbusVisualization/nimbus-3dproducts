@@ -5,7 +5,7 @@ class Nimbus_3dproducts_Model_Observer {
         $customValues = $form->getElement('nimbus_object');
         if ($customValues) {
             $customValues->setRenderer(
-                Mage::app()->getLayout()->createBlock('nimbus_3dproducts/adminhtml_product_custom')
+                Mage::app()->getLayout()->createBlock('nimbus3d/adminhtml_product_custom')
             );
         }
     }

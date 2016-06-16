@@ -36,7 +36,7 @@
                             <show_in_store>0</show_in_store>
 						</client_secret>
                         <api_base_url translate="label">
-                            <label>API Base URL (development only)</label>
+                            <label>Override API Base URL (For development use only)</label>
                             <frontend_type>text</frontend_type>
                             <sort_order>20</sort_order>
                             <show_in_default>1</show_in_default>

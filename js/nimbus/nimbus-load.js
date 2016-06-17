@@ -97,8 +97,9 @@
       modalInner: '.nimbus-modal-inner',
       modalContent: '.nimbus-modal-content',
       onBeforeOpen : function(e) {
+        var cache_bust = '&' + (new Date).getTime();
         jQuery('#nimbus-modal-1').css({ display: 'block' });
-        jQuery('#nimbus-iframe').attr('src', jQuery('.nimbus-modal-trigger').data('url'));
+        jQuery('#nimbus-iframe').attr('src', jQuery('.nimbus-modal-trigger').data('url') + cache_bust);
         jQuery('#nimbus-modal-target').addClass('modal-open');
         jQuery('.modal-backdrop').addClass('in').css('z-index', 1040);
       },

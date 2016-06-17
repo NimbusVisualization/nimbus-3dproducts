@@ -57,6 +57,14 @@ class Nimbus_3dProducts_Model_Api_Client
 	}
 	
 	/**
+	 * @return string|false
+	 */
+	public function getSalesUrl()
+	{
+		return empty($this->helper->client_id) ? false : $this->helper->api_base_url . 'api/v1/reports/sales' . '?client_id=' . $this->helper->client_id;
+	}
+	
+	/**
 	 * @param string $api_segments
 	 * @return object|false
 	 */

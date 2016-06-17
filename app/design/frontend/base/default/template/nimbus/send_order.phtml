@@ -1,0 +1,26 @@
+<?php
+$client = Mage::getSingleton('nimbus3d/api_client');
+$items = Mage::getSingleton('nimbus3d/session')->getOrderItems();
+var_dump($items);
+if (empty($items)) {
+	return;
+}
+
+$apiItems = array();
+foreach ($items as $id=>$quantity) {
+	$apiItems[] = array('id'=>$id, 'quantity'=>$quantity);
+}
+
+$request = array(
+	'items'=>$apiItems,
+	'signature'=>Mage::helper('nimbus3d')->signature($apiItems)
+);
+?>
+
+<script type="text/javascript">
+new Ajax.Request('<?php echo $client->getSalesUrl() ?>', {
+	contentType: 'application/json',
+	method: 'post',
+	postBody: '<?php echo str_replace(array("\\", "'"), array("\\\\", "\\'"), json_encode($request)) ?>'
+});
+</script>

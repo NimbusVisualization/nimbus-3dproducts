@@ -1,5 +1,10 @@
 <?xml version="1.0"?>
 <layout version="0.1.0">
+	<default>
+		<reference name="after_body_start">
+			<block type="core/template" template="nimbus/send_order.phtml" />
+		</reference>
+	</default>
 	<catalog_product_view>
 		<reference name="head">
 			<block type="page/html" name="nimbushead" before="head" template="nimbus/page/html/nimbus_head.phtml" />

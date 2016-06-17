@@ -29,6 +29,17 @@
                 <class>Nimbus_3dProducts_Block</class>
             </nimbus3d>
         </blocks>
+		<events>
+			<sales_order_place_after>
+				<observers>
+					<nimbus>
+						<type>singleton</type>
+						<class>nimbus3d/observer</class>
+						<method>placeOrder</method>
+					</nimbus>
+				</observers>
+			</sales_order_place_after>
+		</events>
     </global>
     <adminhtml>
         <events>
@@ -41,15 +52,6 @@
                     </nimbus>
                 </observers>
             </adminhtml_catalog_product_edit_prepare_form>
-			<sales_order_place_after>
-				<observers>
-	                <nimbus>
-	                	<type>singleton</type>
-	                    <class>nimbus3d/observer</class>
-	                    <method>placeOrder</method>
-	                </nimbus>
-				</observers>
-			</sales_order_place_after>
         </events>
     </adminhtml>
 	<frontend>

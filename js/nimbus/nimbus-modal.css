@@ -142,6 +142,24 @@
   }
 }
 
+@media (min-width: 1200px) {
+  #nimbus-modal-target.modal-lg .modal-dialog {
+    width: 90vw;
+    height: 90vh;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #nimbus-modal-target .modal-body,
+  #nimbus-modal-target .modal-content {
+    height: calc(100% - 30px);
+  }
+
+  #nimbus-modal-target iframe {
+    height: 100% !important;
+  }
+}
+
 /*
  * Custom modal styles
  *

@@ -1,7 +1,7 @@
 <?php
 $client = Mage::getSingleton('nimbus3d/api_client');
 $items = Mage::getSingleton('nimbus3d/session')->getOrderItems();
-var_dump($items);
+
 if (empty($items)) {
 	return;
 }
